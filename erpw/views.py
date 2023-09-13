@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Post
 
 posts = [
     {
@@ -16,11 +16,11 @@ posts = [
     }
 ]
 def home (request):
-    context = {
-        'posts': posts
-    }
-    return render (request, 'erpw/home.html', context)
+    return render (request, 'erpw/home.html')
 
 def users (request):
-    return render (request, 'erpw/users.html', {'title':'Users'})
+    context = {
+        'posts': Post.objects.all()
+    }
+    return render (request, 'erpw/users.html', context)
 

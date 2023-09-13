@@ -1,8 +1,11 @@
 {% extends "erpw/base.html" %}
+{% load static %}
 {% block content %}
-    {% for post in posts%}
-        <h1>{{ post.title }}</h1>
-        <p>By {{ post.author }} on {{ post.date_posted }}</p>
-        <p> {{ post.content }}</p>
-    {% endfor %}
+     <style>
+        h1{
+            margin-left: 300px;
+        }
+    </style>
+<h1> "home page!"</h1>
+
 {% endblock content %}

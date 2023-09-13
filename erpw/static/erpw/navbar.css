@@ -16,7 +16,7 @@ body{
 	position: fixed;
 	width: 250px;
 	height: 100%;
-	background: #4527A0;
+	background: #080f56;
 	padding: 10px 0;
 
 }
@@ -55,7 +55,7 @@ body{
 }
 .userProfile a{
 	width: 20px;
-	background: #4527A0;
+	background: #080f56;
 	color: #bdb8d7;
 	text-decoration: none;
 	font-size: 15px;

@@ -1,4 +1,22 @@
 {% extends "erpw/base.html" %}
 {% block content %}
-   <h1>this is the users page!!!</h1>
+    {% for post in posts%}
+        <style>
+        h2{
+            margin-left: 300px;
+        }
+        h3{
+            margin-left: 300px;
+        }
+        h4{
+            margin-left: 300px;
+        }
+        </style>
+        <body>
+        <h2 >{{ post.title }}</h2>
+        <h4>By {{ post.author }} on {{ post.date_posted }}</h4>
+        <h3> {{ post.content }}</h3>
+
+        </body>
+    {% endfor %}
 {% endblock content %}
