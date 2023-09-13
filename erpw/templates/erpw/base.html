@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>Erp Website - {{ title }}</title>
+    {% else %}
+    <title>Erp Website</title>
+    {% endif %}
+    {% include "erpw/navbar.html" %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>
