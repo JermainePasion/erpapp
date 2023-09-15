@@ -10,7 +10,7 @@ label{
   margin: 0;
   color: rgba(10, 10, 10, 0.8);
 }
-div{
+div{+
   font-size: 15px;
   margin: 10;
   color: rgba(84, 83, 83, 0.8);
