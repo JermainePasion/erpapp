@@ -7,6 +7,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+
+
+
     <div class = "content-section">
         <form method="POST">
             {% csrf_token %}
@@ -14,15 +18,20 @@
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="bubble-btn" type="submit">Sign Up</button>
+                <button class="bubble-btn" type="submit">Log In</button>
             </div>
         </form>
         <div class = "border-top pt-3">
             <small class="text-muted">
-                Already Have An Account? <a class= "ml-2" href="{% url 'login' %}">Sign In!</a>
+                Don't Have An Account? <a class= "ml-2" href="{% url 'register' %}">Sign Up Now!</a>
             </small>
         </div>
     </div>
 
-
-
+    {% if messages %}
+        {% for message in messages %}
+            <div name="alert" class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}

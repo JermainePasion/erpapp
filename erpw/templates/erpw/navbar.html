@@ -1,26 +1,96 @@
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'erpw/navbar.css' %}">
-<div class="wrapper d-flex">
-		<div class="sidebar">
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-			<ul>
-				<li><a href=""><i class="fas fa-home"></i>Dashboard</a></li>
-				<li><a href="users/"><i class="fas fa-users"></i>Users</a></li>
-				<li class="notification1"><a href="#"><i class="fas fa-calendar-week"></i>Sales Invoices</a><span class="number1"></span></li>
-				<li class="notification2"><a href="#"><i class="far fa-envelope"></i>Purchase Orders</a><span class="number2"></span></li></li>
-				<li><a href="#"><i class="fas fa-signal"></i>Customers</a></li>
+  <!-- Link Styles -->
+  <link rel="stylesheet" href="{% static 'erpw/navbar.css' %}">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo_details">
+      <i class="bx bxl-audible icon"></i>
+      <div class="logo_name">Swift & Easy</div>
+      <i class="bx bx-menu" id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <i class="bx bx-search"></i>
+        <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="{% url 'erpw-home' %}">
+          <i class="bx bx-grid-alt"></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+        <a href="{% url 'erpw-users' %}">
+          <i class="bx bx-user"></i>
+          <span class="link_name">User</span>
+        </a>
+        <span class="tooltip">User</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-chat"></i>
+          <span class="link_name">Message</span>
+        </a>
+        <span class="tooltip">Message</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-pie-chart-alt-2"></i>
+          <span class="link_name">Analytics</span>
+        </a>
+        <span class="tooltip">Analytics</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-folder"></i>
+          <span class="link_name">File Manger</span>
+        </a>
+        <span class="tooltip">File Manger</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-cart-alt"></i>
+          <span class="link_name">Order</span>
+        </a>
+        <span class="tooltip">Order</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-cog"></i>
+          <span class="link_name">Settings</span>
+        </a>
+        <span class="tooltip">Settings</span>
+      </li>
+      <li>
+        <a href="{% url 'logout' %}">
+          <i class="bx bx-grid-alt"></i>
+          <span class="link_name">Logout</span>
+        </a>
+        <span class="tooltip">Logout</span>
+      </li>
+      <li class="profile">
+        <div class="profile_details">
+          <img src="profile.jpeg" alt="profile image">
+          <div class="profile_content">
+            <div class="name">Anna Jhon</div>
+            <div class="designation">Admin</div>
+          </div>
+        </div>
+        <i class="bx bx-log-out" id="log_out"></i>
+      </li>
+    </ul>
+  </div>
 
-                <li><a href="#">Inventory</a></li>
-                <li><a href="#">Reports</a></li>
-                <li><a href="#">Customer Support</a></li>
-                <li><a href="#">Settings</a></li>
-		</ul>
-		<div class="userProfile">
-			<a href="#"><i class="far fa-user-circle  xyz"></i></a>
-			<p class="username">Dianne Robertson<br><a href="#">View Profile</a></p>
-			<a href="#"><i class="fas fa-cog mnp"></i></a>
-		</div>
-
-	</div>
-</div>
+  <!-- Scripts -->
+  <script src="{% static 'erpw/navbar.js' %}"></script>
+</body>
+</html>
