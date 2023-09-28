@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'erpw.apps.ErpConfig',
     'users.apps.UsersConfig',
+    'contacts.apps.ContactsConfig',
     'crispy_forms',
     'crispy_bootstrap5',
     'django.contrib.admin',

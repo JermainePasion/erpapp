@@ -5,7 +5,7 @@
 <head>
 
   <!-- Link Styles -->
-  <link rel="stylesheet" href="{% static 'erpw/navbar.css' %}">ex
+  <link rel="stylesheet" href="{% static 'erpw/navbar.css' %}">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -37,7 +37,7 @@
       </li>
       <li>
         <a href="#">
-          <i class="bx bx-chat"></i>
+          <i class="bx bx-receipt"></i>
           <span class="link_name">Sales Invoice</span>
         </a>
         <span class="tooltip">Sales Invoice</span>
@@ -72,10 +72,17 @@
       </li>
       <li>
         <a href="{% url 'logout' %}">
-          <i class="bx bx-grid-alt"></i>
+          <i class="bx bx-log-out"></i>
           <span class="link_name">Logout</span>
         </a>
         <span class="tooltip">Logout</span>
+      </li>
+      <li>
+        <a href="{% url 'contacts' %}">
+          <i class="bx bx-support"></i>
+          <span class="link_name">Contact Support</span>
+        </a>
+        <span class="tooltip">Contact Support</span>
       </li>
       <li class="profile">
         <div class="profile_details">

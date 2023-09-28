@@ -23,6 +23,7 @@
       <list>
         <option value="$MODULE_DIR$/erpw/templates" />
         <option value="$MODULE_DIR$/users/templates" />
+        <option value="$MODULE_DIR$/contacts/templates" />
       </list>
     </option>
   </component>
