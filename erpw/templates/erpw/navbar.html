@@ -11,7 +11,7 @@
 <body>
   <div class="sidebar">
     <div class="logo_details">
-      <i class="bx bxl-audible icon"></i>
+      <i class=""></i>
       <div class="logo_name">Swift & Easy</div>
       <i class="bx bx-menu" id="btn"></i>
     </div>
@@ -50,18 +50,11 @@
         <span class="tooltip">Orders</span>
       </li>
       <li>
-        <a href="#">
+        <a href="{% url 'inventory_list' %}">
           <i class="bx bx-folder"></i>
           <span class="link_name">Inventory</span>
         </a>
         <span class="tooltip">Inventory</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-cart-alt"></i>
-          <span class="link_name">Order</span>
-        </a>
-        <span class="tooltip">Order</span>
       </li>
       <li>
         <a href="#">
@@ -98,7 +91,19 @@
       </li>
     </ul>
   </div>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10 col-sm-12 col-xm-12">
+                    {% block content %}
 
+                    {% endblock %}
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </main>
   <!-- Scripts -->
   <script src="{% static 'erpw/navbar.js' %}"></script>
 </body>

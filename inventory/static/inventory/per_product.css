@@ -1,0 +1,40 @@
+body{
+    background: #e4e9f7;
+}
+
+.wrapper{
+    display:flex;
+    justify-content: space-between;
+    width:1200px;
+    margin: 2rem auto;
+    flex-wrap: wrap;
+}
+.box{
+    margin: 20px;
+    width: 300px;
+    height: 250px;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 1.5rem ;
+}
+
+.box:hover{
+    transition: 0.5s ease-in-out;
+    background-color: #004f83;
+    color: white;
+}
+
+.box img{
+    width: 100px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.box img:hover{
+    transform: scale(1.1);
+    box-shadow:0px 0px 15px white;
+}
+
+.p{
+    font-size: 50px;
+}

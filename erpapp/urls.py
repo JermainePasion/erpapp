@@ -12,6 +12,7 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('', include('erpw.urls')),
     path('contacts/', include('contacts.urls'), name='contacts'),
+    path('inventory/', include('inventory.urls')),
 ]
 
 #, authentication_form=UserLoginForm

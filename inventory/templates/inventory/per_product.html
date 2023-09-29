@@ -1,0 +1,55 @@
+{% include "erpw/base.html" %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'inventory/per_product.css' %}">
+
+{% block content %}
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <img src="{% static 'images/product-hunt.svg' %}">
+            <h2>Product Name</h2>
+            <p style="font-size: 35px;">{{ inventory.name }}</p>
+        </div>
+        <div class="box">
+            <img src="{% static 'images/black-check.png' %}">
+            <h2>Quantity Sold</h2>
+            <p style="font-size: 35px;">{{ inventory.quantity_sold }}</p>
+        </div>
+        <div class="box">
+            <img src="{% static 'images/tags-solid.svg' %}">
+            <h2>Price Per {{ inventory.name }}</h2>
+            <p style="font-size: 35px;">₱{{ inventory.cost_per_item }}</p>
+        </div>
+        <div class="box">
+            <img src="{% static 'images/pesos.png' %}">
+            <h2>Sales / Revenue</h2>
+            <p style="font-size: 35px;">₱{{ inventory.sales }}</p>
+        </div>
+        <div class="box">
+            <img src="{% static 'images/calendar1.png' %}">
+            <h2>Stock Date</h2>
+            <p style="font-size: 35px;">{{ inventory.stock_date}}</p>
+        </div>
+        <div class="box">
+            <img src="{% static 'images/clock.png' %}">
+            <h2>Last Sales Date</h2>
+            <p style="font-size: 35px;">{{ inventory.last_sales_date}}</p>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+{% endblock %}
