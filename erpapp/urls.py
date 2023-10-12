@@ -13,6 +13,7 @@ urlpatterns = [
     path('', include('erpw.urls')),
     path('contacts/', include('contacts.urls'), name='contacts'),
     path('inventory/', include('inventory.urls')),
+    path('orders/', include ('orders.urls'), name='orders'),
 ]
 
 #, authentication_form=UserLoginForm

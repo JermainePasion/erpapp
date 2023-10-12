@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'contacts.apps.ContactsConfig',
     'inventory.apps.InventoryConfig',
+    'orders.apps.OrdersConfig',
     'crispy_forms',
     'crispy_bootstrap5',
     'django.contrib.admin',

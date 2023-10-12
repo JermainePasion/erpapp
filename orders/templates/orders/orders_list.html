@@ -1,0 +1,84 @@
+
+{% include "erpw/base.html" %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'orders/order_list.css' %}">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>DataTables example - Bootstrap 3</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+	<script type="text/javascript">
+
+
+
+	</script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+				<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+					<thead class="thead-light">
+						<tr>
+							<th scope="col">#</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Order Date</th>
+                            <th scope="col">Warehouse Location</th>
+                            <th scope="col">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							{% for Orders in orders %}
+                                <th scope="row">{{ forloop.counter }}</th>
+                                <th scope="row">{{ Orders.description }}</th>
+                                <th scope="row">{{ Orders.quantity }}</th>
+                                <th scope="row">₱{{ Orders.price }}</th>
+                                <th scope="row">{{ Orders.order_date }}</th>
+                                <th scope="row">{{ Orders.warehouse }}</th>
+                                <th>
+                                    <a href="">
+                                        <button class="btn btn-primary btn-lg" id="approve" style="background-color:green;">Approve</button>
+                                    </a>
+                                    <a href="">
+                                        <button class="btn btn-primary btn-lg" id="update" style="background-color:#e4e802;">Update</button>
+                                    </a>
+                                    <a href="">
+                                        <button class="btn btn-primary btn-lg" id="delete" style="background-color:#c21408;">Delete</button>
+                                    </a>
+                                </th>
+
+						</tr>
+                    {% endfor %}
+                    </tbody>
+				</table>
+
+
+				</div>
+        <div class="container">
+            <a href="{% url 'add' %}">
+                <button class="btn btn-primary btn-lg">Request Order</button>
+            </a>
+    </div>
+</div>
+
+
+  <!-- Scripts -->
+  <script src="{% static 'inventory/inventory_list.js' %}"></script>
+</body>
+{% endblock content %}
+</html>
