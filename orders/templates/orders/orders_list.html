@@ -38,7 +38,9 @@
                             <th scope="col">Price</th>
                             <th scope="col">Order Date</th>
                             <th scope="col">Warehouse Location</th>
+                            {% if user.is_superuser %}
                             <th scope="col">Action</th>
+                            {% endif %}
 						</tr>
 					</thead>
 					<tbody>
@@ -50,6 +52,7 @@
                                 <th scope="row">₱{{ Orders.price }}</th>
                                 <th scope="row">{{ Orders.order_date }}</th>
                                 <th scope="row">{{ Orders.warehouse }}</th>
+                                {% if user.is_superuser %}
                                 <th>
                                     <a href="">
                                         <button class="btn btn-primary btn-lg" id="approve" style="background-color:green;">Approve</button>
@@ -61,6 +64,7 @@
                                         <button class="btn btn-primary btn-lg" id="delete" style="background-color:#c21408;">Delete</button>
                                     </a>
                                 </th>
+                                {% endif %}
 
 						</tr>
                     {% endfor %}
@@ -75,6 +79,7 @@
             </a>
     </div>
 </div>
+
 
 
   <!-- Scripts -->

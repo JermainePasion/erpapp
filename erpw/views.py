@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def home (request):
-    return render (request, 'erpw/home.html')
+    return render (request, 'inventory/dashboard.html')
 
 @login_required
 def users (request):

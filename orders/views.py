@@ -13,6 +13,7 @@ def orders_list (request):
     }
     return render (request, 'orders/orders_list.html', context=context)
 
+@login_required
 def add(request):
    if request.method == 'POST':
        form = AddOrderForm(request.POST)
@@ -23,14 +24,21 @@ def add(request):
        form = AddOrderForm()
    return render(request,'orders/orders_add.html', {'form':form})
 
+@login_required
 def show(request):
     orders = Orders.objects.all()
     return render (request, 'orders/orders_list.html',{'orders':orders})
-def authenticate(request):
-    pass
+@login_required
+def authenticate(request, id):
+    orders = Orders.objects.get(pk=id)
+    orders.is_authenticated = True
+    orders.save()
+    return redirect('show')
 
+@login_required
 def update(request):
     pass
 
+@login_required
 def delete(request):
     pass

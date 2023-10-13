@@ -3,6 +3,7 @@ from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from users import views as user_views
 from users.views import register
+from inventory.views import dashboard
 
 
 urlpatterns = [
@@ -14,6 +15,7 @@ urlpatterns = [
     path('contacts/', include('contacts.urls'), name='contacts'),
     path('inventory/', include('inventory.urls')),
     path('orders/', include ('orders.urls'), name='orders'),
+    path("dashboard/",dashboard, name = "dashboard"),
 ]
 
 #, authentication_form=UserLoginForm
