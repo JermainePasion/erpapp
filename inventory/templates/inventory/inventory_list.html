@@ -63,7 +63,12 @@ $(document).ready(function() {
     
 				</div>
 </div>
-
+<div class="container">
+            <a href="{% url 'add_inventory' %}">
+                <button class="btn btn-primary btn-lg">Add Inventory</button>
+            </a>
+    </div>
+</div>
   <!-- Scripts -->
   <script src="{% static 'inventory/inventory_list.js' %}"></script>
 </body>

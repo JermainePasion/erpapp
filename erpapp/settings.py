@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'erpw.apps.ErpConfig',
     'users.apps.UsersConfig',
-    'contacts.apps.ContactsConfig',
+    'contacts.apps.ContactsConfig', 
     'inventory.apps.InventoryConfig',
     'orders.apps.OrdersConfig',
     'crispy_forms',
@@ -128,7 +128,7 @@ STATIC_URL = 'static/'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
-LOGIN_REDIRECT_URL = 'erpw-home'
+LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 
 # Default primary key field type

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Inventory
 from django.contrib.auth.decorators import login_required
-from .forms import AddInventoryForm
+from .forms import AddInventoryForm, UpdateInventoryForm
 from django.http import HttpResponse
 from django_pandas.io import read_frame
 import plotly
@@ -28,17 +28,34 @@ def per_product_view(request, pk):
     return render(request,"inventory/per_product.html",context=context)
 
 @login_required
-def add_product(request):
+def add_inventory(request):
+    if request.method == 'POST':
+        form = AddInventoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('inventory_list')
+    else:
+        form = AddInventoryForm()
+    return render(request, 'inventory/inventory_add.html', {'form': form})
+@login_required
+def delete_inventory(request, pk):
+    inventory = get_object_or_404(Inventory, pk=pk)
+    inventory.delete()
+    return redirect('inventory_list')
+
+@login_required
+def update_inventory(request, pk):
     if request.method =="POST":
-        add_form = AddInventoryForm( data=request.POST)
-        if add_form.is_valid():
-            new_inventory = add_form.save(commit=False)
-            new_inventory.sales = float(add_form.data['cost_per_item']) * float(add_form.data['quantity_sold'])
-            new_inventory.save()
-            return redirect("/inventory/")
-        else:
-            add_form = AddInventoryForm()
-        return render(request, "inventory/inventory_add.html", {"form": add_form}, context=context)
+        user = Inventory.objects.get(pk=pk)
+        form = AddInventoryForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('inventory_list')
+
+    else:
+        user = Inventory.objects.get(pk=pk)
+        form = AddInventoryForm(instance=user)
+    return render(request, 'inventory/inventory_update.html', {'form': form})
 
 
 @login_required

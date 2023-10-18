@@ -38,3 +38,20 @@ body{
 .p{
     font-size: 50px;
 }
+
+.button {
+  background-color: #c50404;
+  border: none;
+  color: white;
+  padding: 15px 300px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 250px;
+  cursor: pointer;
+}
+
+.button .button2{
+    background-color: #c5b504
+}

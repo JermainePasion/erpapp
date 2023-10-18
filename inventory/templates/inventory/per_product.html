@@ -35,10 +35,13 @@
             <h2>Last Sales Date</h2>
             <p style="font-size: 35px;">{{ inventory.last_sales_date}}</p>
         </div>
-
-
+            <div class="container">
+                <a class="button" style="background-color: #057a02" href="{% url 'update_inventory' inventory.id %}">Update Inventory</a>
+            </div>
+            <div class="container">
+                <a class="button" style="background-color: #c50404" href="{% url 'delete_inventory' inventory.id %}">Delete Inventory</a>
+            </div>
     </div>
-
 
 
 
