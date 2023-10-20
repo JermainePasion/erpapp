@@ -58,6 +58,13 @@
         <span class="tooltip">Inventory</span>
       </li>
       {% endif %}
+        <li>
+        <a href="{% url 'profile' %}">
+          <i class="bx bx-user-circle"></i>
+          <span class="link_name">Profile</span>
+        </a>
+        <span class="tooltip">Profile</span>
+      </li>
       <li>
         <a href="#">
           <i class="bx bx-cog"></i>
@@ -81,9 +88,10 @@
       </li>
       <li class="profile">
         <div class="profile_details">
-          <img src="profile.jpeg" alt="profile image">
+          <img src="{{ user.profile.image.url }}" alt="profile image">
+            </a>
           <div class="profile_content">
-            <div class="name">Anna Jhon</div>
+            <div class="name">{{ user.username }}</div>
             <div class="designation">Admin</div>
           </div>
         </div>

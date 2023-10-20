@@ -158,6 +158,18 @@ body{
   color: var(--color-white);
 }
 
+.anchortag{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  text-decoration: none;
+  background-color: #006b1b;
+  position: relative;
+  transition: all .5s ease;
+  z-index: 12;
+}
+
 .sidebar li a{
   display: flex;
   height: 100%;
