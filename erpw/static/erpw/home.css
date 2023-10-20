@@ -1,0 +1,6 @@
+.card{
+    width: 75%;
+    height: 60%;
+    display: flex;
+    margin: auto;
+}

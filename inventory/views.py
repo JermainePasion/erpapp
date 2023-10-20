@@ -7,7 +7,7 @@ from django_pandas.io import read_frame
 import plotly
 import plotly.express as px
 import json
-
+from django.contrib import messages
 @login_required
 def inventory_list(request):
     inventories = Inventory.objects.all()
@@ -33,6 +33,7 @@ def add_inventory(request):
         form = AddInventoryForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Successfully Added Inventory")
             return redirect('inventory_list')
     else:
         form = AddInventoryForm()
@@ -41,6 +42,7 @@ def add_inventory(request):
 def delete_inventory(request, pk):
     inventory = get_object_or_404(Inventory, pk=pk)
     inventory.delete()
+    messages.success(request, "Successfully Deleted Inventory")
     return redirect('inventory_list')
 
 @login_required
@@ -50,6 +52,7 @@ def update_inventory(request, pk):
         form = AddInventoryForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
+            messages.success(request, "Successfully Updated Inventory")
             return redirect('inventory_list')
 
     else:
@@ -72,8 +75,16 @@ def dashboard(request):
     best_performing_product = px.bar(best_performing_product_df, x = best_performing_product_df.index, y = best_performing_product_df.quantity_sold, title="Best Performing Product")
     best_performing_product = json.dumps(best_performing_product, cls=plotly.utils.PlotlyJSONEncoder)
 
+    most_product_in_stock_df = df.groupby(by="name").sum().sort_values(by="quantity_in_stock")
+    most_product_in_stock = px.pie(most_product_in_stock_df,names = most_product_in_stock_df.index,
+                                                            values = most_product_in_stock_df.quantity_in_stock,
+                                                            title = "Most Product In Stock" )
+    most_product_in_stock = json.dumps(most_product_in_stock, cls=plotly.utils.PlotlyJSONEncoder)
+
+
     context = {
         "sales_graph": sales_graph,
         "best_performing_product": best_performing_product,
+        "most_product_in_stock": most_product_in_stock,
     }
     return render(request,"erpw/home.html", context=context)
