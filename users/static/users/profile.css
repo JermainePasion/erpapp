@@ -138,3 +138,22 @@ p {
 }
 
 
+
+
+
+.alert {
+  width: 800px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  margin: auto;
+  font-size: 16px;
+}
+
+.alert.alert-success {
+  background-color: rgba(227, 253, 235, 1);
+  border-color: rgba(38, 179, 3, 1);
+  color: rgba(60, 118, 61, 1);
+}
+
