@@ -1,0 +1,42 @@
+{% include "erpw/base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'erpw/post_confirm_delete.css' %}">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+        <form method="POST">
+             {% csrf_token %}
+      <div class="box">
+        <h3>Delete Post</h3>
+
+        <div class="warn_info">
+          <h4><i class="fa fa-warning"></i> Warning</h4>
+          <p style="justify-content: center">By deleting the post "{{ object.title }}", you can't undo this action.</p>
+        </div>
+
+        <div class="clearfix">
+          <a class="btn1" id="cancel" href="{% url 'erpw-detail' object.id %}">Cancel</a>
+            <button class="btn2" type="submit">Yes, Delete <i class="fa fa-trash"></i></button>
+        </form>
+      </div>
+    </div>
+    <script></script>
+  </body>
+</html>
+{% endblock content %}
