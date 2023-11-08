@@ -31,7 +31,7 @@
                                     <img class="rounded-circle" width="45" src="{{ object.author.profile.image.url }}" alt="">
                                 </div>
                                 <div class="ml-2">
-                                    <div class="h5 m-0">{{ object.author }}</div>
+                                    <div class="h5 m-0"><a class="mr-2" href="{% url 'erpw-user-posts' object.author.username %}">{{ post.author }}<a/></div>
                                 </div>
                                 {% if object.author == user %}
 

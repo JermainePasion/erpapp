@@ -1,6 +1,7 @@
 {% include "erpw/base.html" %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'erpw/users.css' %}">
+<h1 class="mb-3" style="margin-left: 205px;"> Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
 {% block content %}
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -20,8 +21,8 @@
 
     <head>
 <div class="container">
-            <a href="{% url 'erpw-create' %}">
-                <button class="btn btn-primary btn-lg" style="padding: 8.5px 35px;"><i class="bx bx-pencil"></i> Create Post</button>
+            <a href="{% url 'erpw-users' %}">
+                <button class="btn btn-primary btn-lg" style="padding: 8.5px 35px;"><i class="bx bx-caret-left-square"></i> Back</button>
             </a>
     </head>
     {% for post in posts%}
@@ -36,7 +37,7 @@
                                     <img class="rounded-circle" width="45" src="{{ post.author.profile.image.url }}" alt="">
                                 </div>
                                 <div class="ml-2">
-                                    <div class="h5 m-0"><a class="mr-2" href="{% url 'erpw-user-posts' post.author.username %}">{{ post.author }}<a/></div>
+                                    <div class="h5 m-0"> <a class="mr-2" href="{% url 'erpw-user-posts' post.author.username %}">{{ post.author }}</a></div>
                                 </div>
                             </div>
 

@@ -5,11 +5,13 @@ from .views import (PostListView,
                     PostCreateView,
                     PostUpdateView,
                     PostDeleteView,
+                    UserPostListView,
                     AddCommentView
 )
 
 urlpatterns = [
     path('', views.home, name='erpw-dashboard'),
+    path('user/<str:username>', UserPostListView.as_view(), name='erpw-user-posts'),
     path('users/', PostListView.as_view(), name='erpw-users'),
     path('users/<int:pk>', PostDetailView.as_view(), name='erpw-detail'),
     path('users/new/', PostCreateView.as_view(), name='erpw-create'),

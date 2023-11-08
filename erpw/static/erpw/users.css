@@ -31,4 +31,14 @@ body {
     margin-left: 150px;
 }
 
+#paginations{
+    margin-left: 205px;
+}
+#button{
+  padding: 15px 20px;
+    display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+
 
