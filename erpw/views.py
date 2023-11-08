@@ -6,7 +6,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
-from .models import Post
+from .models import Post, Comment
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import UserPassesTestMixin
@@ -62,10 +62,27 @@ class PostDeleteView(UserPassesTestMixin,DeleteView):
             return True
         return False
 
+@method_decorator(login_required, name='dispatch')
+class AddCommentView(CreateView):
+    model = Comment
+    fields = ['content']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    success_url = '/users'
+
+
+
+
+
 @login_required
 def users (request):
     context = {
         'posts': Post.objects.all()
     }
     return render (request, 'erpw/users.html', context)
+
+
 

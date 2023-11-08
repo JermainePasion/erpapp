@@ -4,7 +4,8 @@ from .views import (PostListView,
                     PostDetailView,
                     PostCreateView,
                     PostUpdateView,
-                    PostDeleteView
+                    PostDeleteView,
+                    AddCommentView
 )
 
 urlpatterns = [
@@ -14,4 +15,5 @@ urlpatterns = [
     path('users/new/', PostCreateView.as_view(), name='erpw-create'),
     path('users/<int:pk>/update/', PostUpdateView.as_view(), name='erpw-update'),
     path('users/<int:pk>/delete/', PostDeleteView.as_view(), name='erpw-delete'),
+    path('users/<int:pk>/comment/', AddCommentView.as_view(), name='erpw-comment'),
 ]

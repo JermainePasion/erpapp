@@ -1,6 +1,6 @@
 {% include "erpw/base.html" %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'erpw/users.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'erpw/post_detail.css' %}">
 {% block content %}
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -21,7 +21,7 @@
             <a href="{% url 'erpw-users' %}">
                 <button class="btn btn-primary btn-lg" style="padding: 8.5px 35px;"><i class="bx bx-caret-left-square"></i> Back</button>
             </a>
-    </head>
+</head>
 
 <div class="card gedf-card" style="margin-left: 205px; margin-right: 115px; margin-top: 20px">
                     <div class="card-header">
@@ -55,8 +55,42 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
-                        <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+                        <a href="{% url 'erpw-comment' post.pk %}" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+                    </div>
+
+
+</div>
+        <h2>Comments...</h2>
+        {% if not post.comments.all %}
+            No Comments Yet....<a href="{% url 'erpw-comment' post.pk %}">
+            Add One <a/>
+        {% else %}
+            {% for comment in post.comments.all %}
+                <div class="d-flex justify-content-center py-2">
+                    <div class="second py-2 px-2"> <span class="text1">{{ comment.content }}</span>
+                        <div class="d-flex justify-content-between py-1 pt-2">
+                            <div><img src="{{ comment.author.profile.image.url }}" width="25"><span class="text2">{{ comment.author }}</span></div>
+                            <div><span class="thumbup"><i class="fa fa-clock-o"></i></span><span class="text4">{{ comment.date_posted }}</span>
+                            {% if comment.author == user %}
+                                    <a class="btn btn-danger btn-sm mt-1 mb-1" style="margin-left: 0px;" href="{% url 'erpw-delete' object.id %}">Delete</a>
+
+                                {% endif %}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    </div>
+
+                </div>
+            {% endfor %}
+        {% endif %}
+</a>
 {% endblock content %}
