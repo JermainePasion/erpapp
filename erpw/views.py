@@ -82,7 +82,7 @@ class AddCommentView(CreateView):
     fields = ['content']
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.Post_id = self.kwargs['pk']
         return super().form_valid(form)
 
     success_url = '/users'

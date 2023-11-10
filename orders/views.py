@@ -7,7 +7,6 @@ from django.contrib import messages
 @login_required
 def orders_list (request):
     orders = Orders.objects.all()
-    print('something')
     context = {
         "title": "Inventory List",
         "orders": orders

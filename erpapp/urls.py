@@ -17,6 +17,7 @@ urlpatterns = [
     path('', include('erpw.urls')),
     path('contacts/', include('contacts.urls'), name='contacts'),
     path('inventory/', include('inventory.urls')),
+    path('invoice/', include ('invoice.urls'), name='invoice'),
     path('orders/', include ('orders.urls'), name='orders'),
     path("dashboard/",dashboard, name = "dashboard"),
 ]
