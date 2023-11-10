@@ -43,22 +43,15 @@
 						<tr>
 							<th scope="col">#</th>
                             <th scope="col">Description</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Order Date</th>
-                            <th scope="col">Warehouse Location</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							{% for Orders in orders %}
                                     {% if Orders.approved %}
-                                <th scope="row">{{ forloop.counter }}</th>
+                                <th scope="row">{{ forloop.counter}}</th>
                                 <th scope="row">{{ Orders.description }}</th>
-                                <th scope="row">{{ Orders.quantity }}</th>
-                                <th scope="row">₱{{ Orders.price }}</th>
-                                <th scope="row">{{ Orders.order_date }}</th>
-                                <th scope="row">{{ Orders.warehouse }}</th>
+
 
 						</tr>
 
@@ -71,11 +64,11 @@
 				</div>
 
 
-                        <a href="{% url 'add' %}">
+                        <a href="{% url 'orders:add' %}">
                             <button class="btn btn-primary btn-lg">Request Order</button>
                         </a>
                         {% if user.is_superuser %}
-                                <a href="{% url 'approval' %}">
+                                <a href="{% url 'orders:approval' %}">
                                     <button class="btn btn-primary btn-lg">Pending Orders</button>
                                 </a>
                         {% endif %}

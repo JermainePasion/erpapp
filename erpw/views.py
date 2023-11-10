@@ -88,9 +88,6 @@ class AddCommentView(CreateView):
     success_url = '/users'
 
 
-
-
-
 @login_required
 def users (request):
     context = {

@@ -1,15 +1,22 @@
 {% include "erpw/base.html" %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'inventory/inventory_list.css' %}">
+<script src="{% static 'inventory/inventory_list.js' %}"></script>
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+
 
 {% block content %}
 <!DOCTYPE html>
 <html>
+
 <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>DataTables example - Bootstrap 3</title>
@@ -19,13 +26,14 @@
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 	<script type="text/javascript">
-	
+
 $(document).ready(function() {
 	$('#example').DataTable();
 } );
 
 	</script>
 </head>
+
 <body>
 
 {% if messages %}
@@ -76,8 +84,7 @@ $(document).ready(function() {
             </a>
     </div>
 </div>
-  <!-- Scripts -->
-  <script src="{% static 'inventory/inventory_list.js' %}"></script>
+
 </body>
 {% endblock content %}
 </html>
