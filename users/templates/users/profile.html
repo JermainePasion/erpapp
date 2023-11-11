@@ -24,7 +24,9 @@
                                                                     <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" style="border-radius: 5px;">
                                                                 </div>
                                                                 <h2 class="f-w-600">{{ user.username }}</h2>
-                                                                <p>Web Designer</p>
+                                                                {% if user.is_superuser %}
+                                                                <p>Admin</p>
+                                                                {% endif %}
                                                                 <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                                                             </div>
                                                         </div>

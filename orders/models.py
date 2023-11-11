@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Orders(models.Model):
     description = models.CharField(max_length=50, null=False, blank=False)
@@ -7,6 +8,7 @@ class Orders(models.Model):
     warehouse = models.CharField(max_length=50, null=False, blank=False)
     order_date = models.DateField(auto_now_add=True)
     approved = models.BooleanField('Approved', default=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return self.description

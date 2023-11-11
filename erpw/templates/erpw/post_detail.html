@@ -73,7 +73,7 @@
                             <div><img src="{{ comment.author.profile.image.url }}" width="25"><span class="text2">{{ comment.author }}</span></div>
                             <div><span class="thumbup"><i class="fa fa-clock-o"></i></span><span class="text4">{{ comment.date_posted }}</span>
                             {% if comment.author == user %}
-                                    <a class="btn btn-danger btn-sm mt-1 mb-1" style="margin-left: 0px;" href="{% url 'erpw-delete' object.id %}">Delete</a>
+                                    <a class="btn btn-danger btn-sm mt-1 mb-1" style="margin-left: 0px;" href="{% url 'erpw-delete_comment' comment.id %}">Delete</a>
 
                                 {% endif %}
                             </div>

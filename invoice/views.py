@@ -10,3 +10,6 @@ def invoice (request):
         "orders": orders
     }
     return render(request, 'invoice/invoice.html', context=context)
+
+def render_invoice(request):
+    return render(request, 'invoice/render_invoice.html')

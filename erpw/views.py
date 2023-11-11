@@ -82,10 +82,23 @@ class AddCommentView(CreateView):
     fields = ['content']
 
     def form_valid(self, form):
-        form.instance.Post_id = self.kwargs['pk']
+        form.instance.author = self.request.user
+        form.instance.post_id = self.kwargs['pk']
         return super().form_valid(form)
 
     success_url = '/users'
+
+@method_decorator(login_required, name='dispatch')
+class DeleteCommentView(DeleteView):
+    model = Comment
+    success_url = '/users'
+
+    def test_func(self):
+        comment = self.get_object()
+        print(self.get_object())
+        if self.request.user == Comment.author:
+            return True
+        return False
 
 
 @login_required

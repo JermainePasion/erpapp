@@ -18,6 +18,7 @@ def add(request):
    if request.method == 'POST':
        form = AddOrderForm(request.POST)
        if form.is_valid():
+           form.instance.user = request.user
            form.save()
            return redirect('orders:show')
    else:
@@ -56,12 +57,6 @@ def approval(request):
 
             for x in id_deleteorder_true:
                 Orders.objects.filter(pk=int(x)).delete()
-
-            id_deleteset_false = set(orders_all_ids) - set(id_deleteorder_true)
-            id_deletelist_false = list(id_deleteset_false)
-
-            #for y in id_deletelist_false:
-                #Orders.objects.filter(pk=int(y)).update(approved=False)
 
             return redirect('orders:orders')
         else:
