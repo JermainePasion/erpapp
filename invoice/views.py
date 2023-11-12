@@ -20,10 +20,15 @@ def invoice (request):
 
 def render_invoice(request, pk):
     obj = get_object_or_404(Orders, pk=pk)
-    subject = (obj.warehouse)
+    number = (obj.pk)
+    subject = (obj.order_date)
     email = (obj.user.email)
+    description = (obj.description)
+    quantity = (obj.quantity)
+    warehouse = (obj.warehouse)
     name = (obj.user)
-    print(subject, email, name)
+    price = (obj.price)
+
 
     if request.method == 'POST':
         message = request.POST.get('message')
@@ -31,6 +36,12 @@ def render_invoice(request, pk):
             'subject': subject,
             'email': email,
             'name': name,
+            'description': description,
+            'quantity': quantity,
+            'warehouse': warehouse,
+            'price': price,
+            'message': message
+
         }
         html_message = render_to_string('invoice/email_invoice.html', message_data)
         plain_message = strip_tags(html_message)
@@ -47,7 +58,11 @@ def render_invoice(request, pk):
     context = {
         'subject': subject,
         'email': email,
-         'name': name,
+        'name': name,
+        'description': description,
+        'quantity': quantity,
+        'warehouse': warehouse,
+        'price': price,
     }
     return render(request, 'invoice/render_invoice.html', context)
 
