@@ -51,11 +51,9 @@ $(document).ready(function() {
 							<th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Quantity In Stock</th>
-                            <th scope="col">Quantity Sold</th>
                             <th scope="col">Cost Per Item</th>
-                            <th scope="col">Sales / Revenue</th>
                             <th scope="col">Stock Date</th>
-                            <th scope="col">Last Sales Date</th>
+
 						</tr>
 					</thead>
 					<tbody>
@@ -65,11 +63,9 @@ $(document).ready(function() {
                                 <th scope="row">{{ forloop.counter }}</th>
                                 <th scope="row">{{ inventory.name }}</th>
                                 <th scope="row">{{ inventory.quantity_in_stock }}</th>
-                                <th scope="row">{{ inventory.quantity_sold }}</th>
                                 <th scope="row">₱{{ inventory.cost_per_item }}</th>
-                                <th scope="row">₱{{ inventory.sales }}</th>
                                 <th scope="row">{{ inventory.stock_date }}</th>
-                                <th scope="row">{{ inventory.last_sales_date }}</th>
+
 						</tr>
                     {% endfor %}
                     </tbody>
