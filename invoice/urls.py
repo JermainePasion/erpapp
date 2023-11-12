@@ -4,6 +4,7 @@ from .views import invoice, render_invoice
 
 urlpatterns = [
     path("", invoice, name='invoice'),
-    path("render/", render_invoice, name='invoice-render'),
+    path("render/<int:pk>", render_invoice, name='invoice-render'),
+    # path("send/<int:pk>", send_email, name='invoice-send'),
 
 ]
