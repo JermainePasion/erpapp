@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     #tailwind
     'tailwind',
 
@@ -158,3 +159,11 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'swiftnplay@gmail.com'
 EMAIL_HOST_PASSWORD = 'mbwo lusc wnpu qedx'
+
+AWS_ACCESS_KEY_ID = 'AKIA3FEX7TKVU4E4QTOM'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'erpapp-files'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
