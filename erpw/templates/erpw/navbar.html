@@ -30,6 +30,7 @@
         </a>
         <span class="tooltip">Users</span>
       </li>
+     {% if user.is_superuser %}
       <li>
         <a href="{% url 'invoice' %}">
           <i class="bx bx-receipt"></i>
@@ -37,6 +38,7 @@
         </a>
         <span class="tooltip">Sales Invoice</span>
       </li>
+      {% endif %}
       <li>
         <a href="{% url 'orders:orders' %}">
           <i class="bx bx-pie-chart-alt-2"></i>
@@ -59,13 +61,6 @@
           <span class="link_name">Profile</span>
         </a>
         <span class="tooltip">Profile</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-cog"></i>
-          <span class="link_name">Settings</span>
-        </a>
-        <span class="tooltip">Settings</span>
       </li>
       <li>
         <a href="{% url 'logout' %}">

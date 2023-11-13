@@ -20,6 +20,7 @@ urlpatterns = [
     path('invoice/', include ('invoice.urls'), name='invoice'),
     path('orders/', include ('orders.urls'), name='orders'),
     path("dashboard/",dashboard, name = "dashboard"),
+
 ]
 
 
