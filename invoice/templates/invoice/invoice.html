@@ -42,6 +42,8 @@
 						<tr>
 							<th scope="col">#</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Ordered by</th>
+                            <th scope="col">User Email</th>
                             <th scope="col"></th>
 						</tr>
 					</thead>
@@ -51,9 +53,11 @@
                                     {% if Orders.approved %}
                                 <th scope="row">{{ forloop.counter}}</th>
                                 <th scope="row">{{ Orders.description }}</th>
+                                <th scope="row">{{ Orders.user }}</th>
+                                <th scope="row">{{ Orders.user.email }}</th>
                            <th>
                                <a href="{% url 'invoice-render' Orders.id%}">
-                                    <button class="btn btn-primary btn-lg">Send PDF</button>
+                                    <button class="btn btn-primary btn-lg">Send Invoice</button>
                                 </a>
                            </th>
 
