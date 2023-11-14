@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9_h1=jqu3bps#yx#cz)9j^saupd9&4n0ru%xq374liw!%ez2n9'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['erpapp-0b2298528385.herokuapp.com']
 
 
 # Application definition
@@ -161,9 +161,11 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'swiftnplay@gmail.com'
 EMAIL_HOST_PASSWORD = 'mbwo lusc wnpu qedx'
 
-AWS_ACCESS_KEY_ID = 'AKIA3FEX7TKVU4E4QTOM'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'erpapp-files'
+AWS_ACCESS_KEY_ID='AKIA3FEX7TKVU4E4QTOM'
+AWS_SECRET_ACCESS_KEY='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'
+AWS_STORAGE_BUCKET_NAME='erpapp-files'
+
+
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
