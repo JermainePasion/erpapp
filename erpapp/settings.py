@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#8j%y6m6j5&!k!_q$!6$!k6-8p+9k#8q6(7n5z5q1b7q2n9!-!8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['erpapp-0b2298528385.herokuapp.com']
 
